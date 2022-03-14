@@ -42,6 +42,7 @@
         <!-- End Navbar -->
 
         <div class="w-full md:w-3/4 lg:w-4/5 p-5 md:px-12 lg:24 h-full overflow-x-scroll antialiased">
+            <form action="statusPost" method="post">
             <div class="bg-white w-full shadow rounded-lg p-5">
                 <textarea class="bg-gray-200 w-full rounded-lg shadow border p-2" rows="5" placeholder="Speak your mind"></textarea>
 
@@ -53,10 +54,11 @@
 <%--                        </select>--%>
                     </div>
                     <div class="w-2/3">
-                        <button type="button" class="float-right bg-indigo-400 hover:bg-indigo-300 text-white p-2 rounded-lg">Submit</button>
+                        <input type="submit" value="Post" class="float-right bg-indigo-400 hover:bg-indigo-300 text-white p-2 rounded-lg">
                     </div>
                 </div>
             </div>
+            </form>
 
             <div class="mt-3 flex flex-col">
 

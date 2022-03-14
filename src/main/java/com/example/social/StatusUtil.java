@@ -12,15 +12,15 @@ public class StatusUtil {
     Statement statement = null;
     private HttpServletRequest request;
 
-    public boolean create(Status status, DataSource dataSource) throws SQLException {
+    public boolean add(Status status, DataSource dataSource) throws SQLException {
         this.connection=dataSource.getConnection();
         String sql="INSERT INTO social.status(id,status,likes,created_on) VALUES (?,?,?,?)";
         HttpSession session = request.getSession();
         this.preparedStatement = connection.prepareStatement(sql);
-        int userId = (int) session.getAttribute("id");
-        this.preparedStatement.setInt(1, userId);
+//        int userId = ;
+        this.preparedStatement.setInt(1, (int) session.getAttribute("id"));
         this.preparedStatement.setString(2, status.getStatus());
-        this.preparedStatement.setInt(3, status.getLike());
+        this.preparedStatement.setInt(3, 0);
         this.preparedStatement.setTimestamp(4, Timestamp.from(Instant.now()));
         boolean result = this.preparedStatement.execute();
         this.close();
@@ -38,3 +38,4 @@ public class StatusUtil {
     }
 
 }
+
