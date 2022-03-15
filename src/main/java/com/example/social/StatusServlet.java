@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.SQLException;
 
 @WebServlet("/statusPost")
@@ -24,8 +25,10 @@ public class StatusServlet extends HttpServlet {
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Status status=new Status(request.getParameter("status"),0);
+        Status status=new Status(request.getParameter("posts"),0);
         StatusUtil statusUtil = new StatusUtil();
+//        PrintWriter out= response.getWriter();
+//        out.println(request.getParameter("statusUpdates"));
         try{
             statusUtil.add(status,dataSource);
         }catch(SQLException e){

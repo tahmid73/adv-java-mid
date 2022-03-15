@@ -15,7 +15,7 @@ public class UserUtil {
 
     public boolean create(User user, DataSource dataSource) throws SQLException {
         this.connection = dataSource.getConnection();
-        String sql = "INSERT INTO social.users (username,password,firstname,lastname, email,dob,created_on) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO social.users(username,password,firstname,lastname, email,dob,created_on) VALUES (?, ?, ?, ?, ?, ?, ?)";
         this.preparedStatement = connection.prepareStatement(sql);
         this.preparedStatement.setString(1, user.getUsername());
         this.preparedStatement.setString(2, user.getPassword());

@@ -44,7 +44,7 @@
         <div class="w-full md:w-3/4 lg:w-4/5 p-5 md:px-12 lg:24 h-full overflow-x-scroll antialiased">
             <form action="statusPost" method="post">
             <div class="bg-white w-full shadow rounded-lg p-5">
-                <textarea class="bg-gray-200 w-full rounded-lg shadow border p-2" rows="5" placeholder="Speak your mind"></textarea>
+                <textarea name="statusUpdates" id="statusUpdates" class="bg-gray-200 w-full rounded-lg shadow border p-2" rows="5" placeholder="Speak your mind"></textarea>
 
                 <div class="w-full flex flex-row flex-wrap mt-3">
                     <div class="w-1/3">
