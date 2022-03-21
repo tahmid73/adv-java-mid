@@ -25,7 +25,7 @@ public class StatusServlet extends HttpServlet {
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Status status=new Status(request.getParameter("posts"),0);
+        Status status=new Status(request.getParameter("statusUpdates"),0);
         StatusUtil statusUtil = new StatusUtil();
 //        PrintWriter out= response.getWriter();
 //        out.println(request.getParameter("statusUpdates"));

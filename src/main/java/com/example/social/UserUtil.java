@@ -32,7 +32,7 @@ public class UserUtil {
 
     public boolean isValidUser(String email, String password, DataSource dataSource) throws SQLException {
         this.connection = dataSource.getConnection();
-        String sql = "SELECT email, password FROM social.users where email = ? and password = ?";
+        String sql = "SELECT email, password, id FROM social.users where email = ? and password = ?";
         this.preparedStatement = connection.prepareStatement(sql);
         this.preparedStatement.setString(1, email);
         this.preparedStatement.setString(2, password);
