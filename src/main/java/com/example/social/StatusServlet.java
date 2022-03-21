@@ -30,7 +30,7 @@ public class StatusServlet extends HttpServlet {
 //        PrintWriter out= response.getWriter();
 //        out.println(request.getParameter("statusUpdates"));
         try{
-            statusUtil.add(status,dataSource);
+            statusUtil.add(status,dataSource,request);
         }catch(SQLException e){
             e.printStackTrace();
         }
